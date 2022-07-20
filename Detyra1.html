@@ -27,7 +27,47 @@
     
     // Display some data from the object:
     document.getElementById("demo").innerHTML = "The car type is " +  car.type  + " the model is " + car.model + "  the color is "  + car.color + " the year of release is " + car.year + " the speed is " +car.speed;
-    </script>
+  
+  
+  
+    function  cal_speed( dist,  time)
+    {
+        document.write(" Distance(km) : " + dist + "<br>" ) ;
+        document.write(" Time(hr) : " + time + "<br>") ;
+                   
+        return dist / time;
+    }
+
+    function  cal_dis( speed,  time)
+    {
+        document.write(" Time(hr) : " + time + "<br>" ) ;
+        document.write(" Speed(km / hr) : " + speed + "<br>") ;
+                   
+        return speed * time;
+    }
+    function  cal_time( dist,  speed)
+    {
+        document.write(" Distance(km) : " + dist + "<br>") ;
+        document.write(" Speed(km / hr) : " + speed + "<br>" ) ;
+                   
+        return dist / speed;
+    }
+       
+    // Driver code
+    document.write(" The calculated Speed(km / hr) is : "+
+                    cal_speed(45.9, 2.0 ) + "<br>");
+    document.write("<br>");
+     
+
+        document.write(" The calculated Distance(km) : "+
+                    cal_dis(62.9, 2.5) + "<br>");
+        document.write("<br>");    
+        
+        document.write(" The calculated Time(hr) : "+
+                cal_time(48.0, 4.5) + "<br>");
+     
+</script>
+
     
     </body>
     </html>
