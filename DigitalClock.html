@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        *{
+            margin: 5px;
+            padding: 10px;
+        }
+       
+        /* #dayname{
+            margin-left: 300px;
+        } */
+        .date{
+            padding-right: 1000px;
+            background-color: white;
+            display: flex;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body onload="initClock()">
+
+   <br>
+    <div class="datetime">
+        <div class="date">
+            <h4 style="background-color:rgb(15, 158, 15);">Day:<span id="dayname">Day</span></h4>
+            <h4 style="background-color: rgb(15, 158, 15);">Month:<span id="month">Month:</span></h4>
+            <h4 style="background-color:rgb(15, 158, 15);">Day:<span id="daynum">00</span></h4>
+            <h4 style="background-color:rgb(15, 158, 15);">Year:<span id="year">Year</span></h4>
+
+            <h4 style="background-color:rgb(15, 158, 15);">Hours:<span id="hour">Hours:</span></h4>
+            <h4 style="background-color:rgb(15, 158, 15);">Minutes:<span id="minutes">Minutes:</span></h4>
+            <h4 style="background-color:rgb(15, 158, 15);">Seconds:<span id="seconds">Seconds:</span></h4>
+            <h4 style="background-color:rgb(15, 158, 15);"><span id="period">AM</span></h4>
+        </div>
+    </div>
+    <script>
+        function updatedClock(){
+            var now=new Date();
+            var dname=now.getDay()+17;
+                mo=now.getMonth()+1;
+                dnum=now.getDay()+17;
+                yea=now.getFullYear();
+                ho=now.getHours();
+                min=now.getMinutes();
+                sec=now.getSeconds();
+                pe="AM";
+
+                var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+                var week=["Sunday","Monday","Tuesday","Wendsday","Thursday","Friday","Saturday"];
+                var ids=["dayname","month","daynum","year","hour","minutes","seconds","period"];
+                var values=[ dname, mo,dnum,yea,ho,min,sec,pe];
+                for (var i=0; i<ids.length; i++)
+                document.getElementById(ids[i]).firstChild.nodeValue=values[i];
+        }
+        function initClock(){
+            updatedClock();
+            window.setInterval("updateClock()",1)
+
+        }
+    </script>
+    
+</body>
+</html>
